@@ -46,6 +46,28 @@ struct TreeNode * creatNode(void) {
 //    }
 //    return ;
 //}
+
+void lastFind(TreeNode *root) {
+    vector<TreeNode *>s;
+    TreeNode *p = root;
+    TreeNode *pre = root;
+    while(p || !s.empty()) {
+        while(p) {
+            s.push_back(p);
+            p = p->left;
+        }
+        p = s.back();
+        s.pop_back();
+        if (p->right != pre && p->right != NULL) {
+            s.push_back(p);
+            p = p->right;
+        } else {
+            printf("%c", p->val);
+            pre = p;
+            p = NULL;
+        }
+    }
+}
 //中序列遍历
 void middleFind(TreeNode *root) {
     vector<TreeNode *>myVector;
@@ -65,29 +87,29 @@ void middleFind(TreeNode *root) {
     return ;
 }
 //后序遍历
-//void houxuFind(TreeNode *root) {
-//    vector<TreeNode *>s;
-//    vector<int> result;
-//    TreeNode *p = root;
-//    TreeNode *pre = root;
-//    while(p || !s.empty()) {
-//        while(p) {
-//            s.push_back(p);
-//            p = p->left;
-//        }
-//        p = s.back();
-//        s.pop_back();
-//        if (p->right != NULL && pre != p->right) {
-//            s.push_back(p);
-//            p = p->right;
-//        } else {
-//            pre = p;
-//            result.push_back(p->val);
-//            printf("%c", p->val);
-//            p = NULL;
-//        }
-//    }
-//}
+void houxuFind(TreeNode *root) {
+    vector<TreeNode *>s;
+    vector<int> result;
+    TreeNode *p = root;
+    TreeNode *pre = root;
+    while(p || !s.empty()) {
+        while(p) {
+            s.push_back(p);
+            p = p->left;
+        }
+        p = s.back();
+        s.pop_back();
+        if (p->right != NULL && pre != p->right) {
+            s.push_back(p);
+            p = p->right;
+        } else {
+            pre = p;
+            result.push_back(p->val);
+            printf("%c", p->val);
+            p = NULL;
+        }
+    }
+}
 
 //ABC##D##EFG####
 int main(int argc, const char * argv[]) {
@@ -95,5 +117,7 @@ int main(int argc, const char * argv[]) {
 //    firstFind(root);
     houxuFind(root);
 //    middleFind(root);
+    printf("\n");
+    lastFind(root);
     return 0;
 }
