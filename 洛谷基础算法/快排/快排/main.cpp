@@ -47,7 +47,7 @@ using namespace std;
 
 
 //第k个大的数。
-int k = 2;
+int k = 7;
 void quickSort(vector<int > &num, int left, int right) {
     if (left > right) {
         return ;
@@ -70,7 +70,7 @@ void quickSort(vector<int > &num, int left, int right) {
     num[left] = num[i];
     num[i] = temp;
     if (i == k - 1) {
-        printf("%d", num[num.size() - k]);
+        printf("%d", num[i]);
     } else if (i < k - 1) {
         quickSort(num, i + 1, right);
     } else {
@@ -91,27 +91,29 @@ void quickSort(vector<int > &num, int left, int right) {
 ////    }
 //}
 
-//void quick(int left, int right, vector<int> &a) {
-//    if (left > right) {
-//        return ;
-//    }
-//    int i = left, j = right, temp = a[left];
-//    while (i < j && temp <= a[j]) {
-//        j--;
-//    }
-//    while (i < j && temp >= a[j]) {
-//        i++;
-//    }
-//    if (i != j) {
-//        int temps = a[i];
-//        a[i] = a[j];
-//        a[j] = temps;
-//    }
-//    a[left] = a[i];
-//    a[i] = temp;
-//    quick(left, i - 1, a);
-//    quick(i + 1, right, a);
-//}
+void quickSorts(vector<int> &a, int left, int right) {
+    if (left > right) {
+        return ;
+    }
+    int i = left, j = right, temp = a[left];
+    while(i < j) {
+        while(a[j] >= temp && i != j) {
+            j--;
+        }
+        while (a[i] <= temp && i != j) {
+            i++;
+        }
+        if (i != j) {
+            int number = a[i];
+            a[i] = a[j];
+            a[j] = number;
+        }
+    }
+    a[left] = a[i];
+    a[i] = temp;
+    quickSorts(a, left, j - 1);
+    quickSorts(a, j + 1, right);
+}
 
 int main(int argc, const char * argv[]) {
     vector<int> a(5, 0);

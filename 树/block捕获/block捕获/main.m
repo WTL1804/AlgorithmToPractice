@@ -8,22 +8,14 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import <malloc/malloc.h>
-int a = 0;
-static int b = 0;
+#import "Person.h"
+
 int main(int argc, const char * argv[]) {
-//    NSObject *obj = [[NSObject alloc] init];
-//    NSLog(@"%ld", (long)CFGetRetainCount((__bridge CFTypeRef)obj));
-//    NSObject *__weak obj2 = obj;
-//    NSLog(@"objc对象实际需要的内存大小: %zd", class_getInstanceSize([obj class]));
-//    NSLog(@"objc对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(obj)));
-//    __weak void(^blk)(void) = ^{
-//        NSLog(@"%@", obj2);
-//        NSLog(@"%ld", CFGetRetainCount((__bridge CFTypeRef)obj2));
-    {
+    __weak void(^blk)(void);
         NSObject *obj = [[NSObject alloc] init];
-        obj = [[NSObject alloc] init];
-    }
-//    };
-//    blk();
+        blk = ^{
+//            NSLog(@"%@", obj.description);
+        };
+//        NSLog(@"%ld", CFGetRetainCount((__bridge CFTypeRef)obj));
     return 0;
 }
