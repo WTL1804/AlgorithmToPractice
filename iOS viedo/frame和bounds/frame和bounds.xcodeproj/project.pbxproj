@@ -16,6 +16,7 @@
 		84F75F84266B0DFB002A8DA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F75F83266B0DFB002A8DA8 /* main.m */; };
 		84F75F8E266B0DFB002A8DA8 /* frame_boundsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F75F8D266B0DFB002A8DA8 /* frame_boundsTests.m */; };
 		84F75F99266B0DFB002A8DA8 /* frame_boundsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F75F98266B0DFB002A8DA8 /* frame_boundsUITests.m */; };
+		84F75FAB266B282C002A8DA8 /* MYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F75FAA266B282C002A8DA8 /* MYView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		84F75F94266B0DFB002A8DA8 /* frame和boundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "frame和boundsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F75F98266B0DFB002A8DA8 /* frame_boundsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = frame_boundsUITests.m; sourceTree = "<group>"; };
 		84F75F9A266B0DFB002A8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F75FA9266B282C002A8DA8 /* MYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYView.h; sourceTree = "<group>"; };
+		84F75FAA266B282C002A8DA8 /* MYView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				84F75F75266B0DF8002A8DA8 /* SceneDelegate.m */,
 				84F75F77266B0DF8002A8DA8 /* ViewController.h */,
 				84F75F78266B0DF8002A8DA8 /* ViewController.m */,
+				84F75FA9266B282C002A8DA8 /* MYView.h */,
+				84F75FAA266B282C002A8DA8 /* MYView.m */,
 				84F75F7A266B0DF8002A8DA8 /* Main.storyboard */,
 				84F75F7D266B0DFB002A8DA8 /* Assets.xcassets */,
 				84F75F7F266B0DFB002A8DA8 /* LaunchScreen.storyboard */,
@@ -270,6 +275,7 @@
 				84F75F73266B0DF8002A8DA8 /* AppDelegate.m in Sources */,
 				84F75F84266B0DFB002A8DA8 /* main.m in Sources */,
 				84F75F76266B0DF8002A8DA8 /* SceneDelegate.m in Sources */,
+				84F75FAB266B282C002A8DA8 /* MYView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

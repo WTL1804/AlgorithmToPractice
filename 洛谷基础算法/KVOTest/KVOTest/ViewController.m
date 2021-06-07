@@ -15,18 +15,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    _person = [[Person alloc] init];
-    //_person.string = [[NSString alloc] init];
-//    [_person addObserver:self forKeyPath:@"string" options:NSKeyValueObservingOptionNew context:nil];
-    //_person.string = [[NSString alloc] init];
-  
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(test) name:nil object:_person];
-//    _person.string = @"123";
-    NSMutableString *string = [NSMutableString stringWithFormat:@"name"];
-    NSMutableString *copyString = [string copy];
-    NSLog(@"%p, %p", string, copyString);
-    [copyString appendString:@"123"];
+    self.person = [[Person alloc] init];
+    [self.person addObserver:self forKeyPath:@"array" options:NSKeyValueObservingOptionNew context:nil];
+    self.person.array = [[NSMutableArray alloc] init];
+    NSMutableArray *array = [self.person mutableArrayValueForKey:@"array"];
+    [array addObject:@"1"];
     
  }
 - (void)test {
@@ -36,7 +29,7 @@
     NSLog(@"do");
 }
 - (void)dealloc {
-    [self.person removeObserver:self.person forKeyPath:@"person"];
+    
 }
 
 @end

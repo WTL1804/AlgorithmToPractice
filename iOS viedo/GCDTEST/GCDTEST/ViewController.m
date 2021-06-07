@@ -16,7 +16,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self groupWait];
+//    [self groupWait];
+    NSThread *thread = [[NSThread alloc] initWithBlock:^{
+        dispatch_queue_t queue = dispatch_queue_create("dada.dad", DISPATCH_QUEUE_SERIAL);
+        dispatch_sync(queue, ^{
+            NSLog(@"1");
+        });
+        NSLog(@"2");
+    }];
+    [thread start];
+    NSLog(@"3");
 }
 - (void)groupWait {
     dispatch_group_t group =  dispatch_group_create();

@@ -23,12 +23,10 @@
 //    } else {
 //        return  [super automaticallyNotifiesObserversForKey:key];
 //    }
-    return NO;
+    return YES;
 }
 - (void)setString:(NSString *)string {
-     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"success" object:nil];
-       [self willChangeValueForKey:@"string"];
+    [self willChangeValueForKey:@"string"];
     _string = string;
     [self didChangeValueForKey:@"string"];
 }

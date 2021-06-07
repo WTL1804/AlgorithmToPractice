@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *string;
 //- (void)didChangeValueForKey:(NSString *)key;
 //- (void)willChangeValueForKey:(NSString *)key;
+@property (nonatomic, strong) NSMutableArray *array;
 @end
 
 NS_ASSUME_NONNULL_END
